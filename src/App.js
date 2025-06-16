@@ -1,22 +1,25 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import InputForm from './components/InputForm';
+import CustomButton from './components/CustomButton';
 
 function App() {
+  const handleButtonClick = () => {
+    console.log('Nút đã được nhấn!');
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Nhập Tên</h1>
+        <InputForm />
+        <div style={{ marginTop: '20px' }}>
+          <CustomButton 
+            text="Xác Nhận" 
+            onClick={handleButtonClick}
+            variant="primary"
+          />
+        </div>
       </header>
     </div>
   );
